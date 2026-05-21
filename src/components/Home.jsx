@@ -8,7 +8,7 @@ import Contact from "./Contact";
 function Home() {
 
   // ✨ Typing Effect
-  const text = "Ancy K";
+  const text = "Ancy k!";
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
