@@ -7,32 +7,19 @@ import Contact from "./Contact";
 
 function Home() {
 
-  // ✨ Typing Effect
-  const text = "Ancy K";
+  // ⌨️ Typing Effect
+  const text = "Ancy k !";
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
     let i = 0;
-    let typingInterval;
+    const interval = setInterval(() => {
+      setDisplayText(text.slice(0, i + 1));
+      i++;
+      if (i === text.length) clearInterval(interval);
+    }, 100);
 
-    const startTyping = () => {
-      i = 0;
-      setDisplayText("");
-
-      typingInterval = setInterval(() => {
-        setDisplayText(text.slice(0, i + 1));
-        i++;
-
-        if (i === text.length) {
-          clearInterval(typingInterval);
-          setTimeout(startTyping, 120000);
-        }
-      }, 100);
-    };
-
-    startTyping();
-
-    return () => clearInterval(typingInterval);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -42,78 +29,70 @@ function Home() {
       {/* 🏠 HOME */}
       <section
         id="home"
-        className="w-full min-h-screen bg-gradient-to-br from-[#0a0f1c] via-[#020617] to-black text-white flex items-center justify-center px-6 md:px-16 relative overflow-hidden"
+        className="w-full min-h-screen bg-black text-white flex items-center justify-center px-4 md:px-10 relative overflow-hidden"
       >
 
-        {/* 🌌 Soft Elegant Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(100,116,139,0.12),transparent_40%),radial-gradient(circle_at_70%_80%,rgba(30,41,59,0.25),transparent_50%)]"></div>
+        {/* 🌌 GRID BACKGROUND */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
-        {/* 💎 MAIN CONTAINER */}
-        <div className="relative z-10 w-full max-w-7xl grid md:grid-cols-2 gap-16 items-center">
+        {/* 🌈 Glow */}
+        <div className="absolute w-[400px] h-[400px] bg-purple-600 rounded-full blur-[140px] opacity-30 top-10 left-10 animate-pulse"></div>
+        <div className="absolute w-[300px] h-[300px] bg-cyan-500 rounded-full blur-[120px] opacity-20 bottom-10 right-10 animate-pulse"></div>
 
-          {/* 🧠 LEFT SIDE */}
-          <div>
+        {/* 💎 HERO CARD */}
+        <div className="relative z-10 w-full max-w-7xl bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl px-8 py-12 md:px-16 md:py-20 flex flex-col md:flex-row items-center gap-12 shadow-[0_0_60px_rgba(0,255,255,0.1)]">
 
-            <h1 className="text-5xl md:text-7xl font-semibold leading-tight text-white">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-gray-200 via-gray-400 to-gray-500 bg-clip-text text-transparent">
-                {displayText}
-              </span>
-              <span className="ml-1 animate-pulse text-gray-400">|</span>
+          {/* 🧠 LEFT */}
+          <div className="flex-1 text-center md:text-left">
+
+            {/* 🔥 BIG NAME */}
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-extrabold bg-gradient-to-r from-cyan-400 via-pink-400 to-purple-400 bg-clip-text text-transparent leading-tight">
+              {displayText}
+              <span className="text-white animate-pulse">|</span>
             </h1>
 
-            <h2 className="mt-4 text-xl text-gray-400">
-              Software Developer • UI Designer
+            <h2 className="mt-4 text-2xl md:text-3xl text-cyan-300">
+              Aspiring Software Developer
             </h2>
 
-            <p className="mt-6 text-gray-300 text-lg leading-relaxed max-w-xl">
-              I design and develop modern, scalable web applications with a strong
-              focus on clean UI, performance, and user experience. Passionate about
-              building elegant solutions using React and Tailwind CSS.
+            <p className="mt-6 text-gray-300 text-lg md:text-xl leading-relaxed max-w-xl mx-auto md:mx-0">
+              I create <span className="text-cyan-400 font-semibold">modern UI</span> and 
+              <span className="text-pink-400 font-semibold"> interactive web apps</span> using 
+              React & Tailwind CSS.
             </p>
 
-            {/* 📊 STATS */}
-            <div className="mt-10 flex gap-10 text-center md:text-left">
-              <div>
-                <h3 className="text-2xl font-semibold">10+</h3>
-                <p className="text-gray-400 text-sm">Projects</p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold">1+</h3>
-                <p className="text-gray-400 text-sm">Years Learning</p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-semibold">100%</h3>
-                <p className="text-gray-400 text-sm">Passion</p>
-              </div>
-            </div>
-
             {/* 🚀 BUTTONS */}
-            <div className="mt-10 flex gap-5">
-
-              <button className="px-7 py-3 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition">
+            <div className="mt-8 flex gap-4 justify-center md:justify-start">
+              <button className="px-6 py-3 bg-gradient-to-r from-pink-500 to-cyan-500 rounded-xl text-white font-semibold shadow-lg hover:scale-105 transition duration-300">
                 Hire Me
               </button>
 
-              <button className="px-7 py-3 border border-gray-600 text-gray-300 rounded-md hover:bg-gray-800 transition">
+              <button className="px-6 py-3 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition duration-300">
                 Download CV
               </button>
-
             </div>
+
           </div>
 
-          {/* 🖼 RIGHT SIDE */}
-          <div className="flex justify-center">
-            <div className="relative">
+          {/* 🖼 RIGHT IMAGE */}
+          <div className="flex-1 flex justify-center">
+            <div className="relative group">
 
-              {/* 🔵 Elegant Ring */}
-              <div className="absolute inset-0 rounded-full border border-gray-500 animate-[spin_20s_linear_infinite]"></div>
+              {/* 🔵 ROTATING RING (FIXED) */}
+              <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-[spin_12s_linear_infinite]"></div>
+
+              {/* ✨ GLOW */}
+              <div className="absolute inset-0 rounded-full bg-cyan-400 blur-2xl opacity-20 group-hover:opacity-40 transition"></div>
+
+              {/* 🌟 PARTICLES */}
+              <div className="absolute w-3 h-3 bg-cyan-300 rounded-full top-2 left-10 animate-bounce"></div>
+              <div className="absolute w-2 h-2 bg-pink-400 rounded-full bottom-10 right-4 animate-ping"></div>
 
               {/* 🧑 IMAGE */}
               <img
                 src="./image/ancy.jpeg"
                 alt="profile"
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border border-gray-600 shadow-xl"
+                className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition duration-500"
               />
 
             </div>
@@ -122,7 +101,7 @@ function Home() {
         </div>
       </section>
 
-      {/* 📄 OTHER SECTIONS */}
+      {/* OTHER SECTIONS */}
       <section id="about" className="scroll-mt-24">
         <About />
       </section>
@@ -142,4 +121,5 @@ function Home() {
     </div>
   );
 }
+
 export default Home;
