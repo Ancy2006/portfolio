@@ -7,7 +7,7 @@ function About() {
       {/* 🌌 DYNAMIC GRADIENT BASE */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#1e1b4b,#030712_70%)]"></div>
 
-      {/* ☄️ ANIMATED FLOATING GLOW BLOBS (Moving Background - Home Theme Matching) */}
+      {/* ☄️ ANIMATED FLOATING GLOW BLOBS (Home Theme Matching) */}
       <div className="absolute w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[130px] top-[-10%] right-[-10%] animate-[bounce_18s_infinite_alternate] mix-blend-screen pointer-events-none"></div>
       <div className="absolute w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] bottom-[-10%] left-[-10%] animate-[pulse_12s_infinite_alternate] mix-blend-screen pointer-events-none"></div>
 
@@ -18,7 +18,7 @@ function About() {
       <section className="relative z-10 max-w-6xl w-full bg-white/[0.02] border border-white/[0.08] backdrop-blur-xl rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]">
 
         {/* 🧠 LEFT TEXT CONTENT */}
-        <div className="flex-1 text-center md:text-left order-2 md:order-1">
+        <div className="flex-[1.2] text-center md:text-left">
           
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-500/10 to-cyan-500/10 text-purple-400 border border-purple-500/20 tracking-wider uppercase mb-4 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
             My Biography
@@ -30,11 +30,15 @@ function About() {
 
           <div className="w-20 h-1.5 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full mb-8 mx-auto md:mx-0"></div>
 
-          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-normal opacity-90">
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-normal opacity-90 mb-6">
             I am a <span className="text-cyan-400 font-semibold shadow-[0_0_15px_rgba(34,211,238,0.1)]">Computer Engineering student</span> passionate about
             <span className="text-purple-400 font-semibold"> web development</span>,
-            programming, and building <span className="text-indigo-400 font-semibold">modern UI applications</span>. 
-            I love turning complex problems into beautiful and intuitive digital experiences.
+            programming, and building <span className="text-indigo-400 font-semibold">modern UI applications</span>.
+          </p>
+
+          <p className="text-gray-400 text-base md:text-lg leading-relaxed font-light opacity-80">
+            I love turning complex problems into beautiful, scalable, and intuitive digital experiences. 
+            Constantly learning new technologies to keep up with modern industry standards.
           </p>
 
           {/* 🎯 SKILLS BADGES */}
@@ -56,32 +60,33 @@ function About() {
 
         </div>
 
-        {/* 🖼 RIGHT IMAGE / VISUAL PLACEHOLDER */}
-        <div className="flex-1 flex justify-center order-1 md:order-2">
-          <div className="relative w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 group">
+        {/* 💻 RIGHT COLUMN: PREMIUM TECH INFOGRAPHIC / VISUAL CARD */}
+        <div className="flex-1 w-full flex justify-center">
+          <div className="relative w-full max-w-sm rounded-2xl p-6 bg-[#050b18]/60 border border-white/5 backdrop-blur-md overflow-hidden group shadow-2xl">
             
-            {/* Outer Purple & Cyan Neon Rotating Ring */}
-            <div className="absolute inset-[-8px] rounded-full bg-gradient-to-r from-purple-500 to-cyan-400 opacity-40 blur-sm animate-[spin_25s_linear_infinite] group-hover:opacity-80 transition duration-700"></div>
-            
-            {/* Inner Dashed Border */}
-            <div className="absolute inset-[-15px] rounded-full border-2 border-dashed border-white/10 animate-[spin_40s_linear_infinite_reverse]"></div>
+            {/* Ambient Line Animation inside card */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-cyan-400 to-transparent transform -translate-x-full group-hover:animate-[shimmer_2.5s_infinite]"></div>
 
-            {/* Behind Glow overlay */}
-            <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-purple-500 via-indigo-500 to-cyan-500 blur-2xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
-
-            {/* Main Image Wrapper */}
-            <div className="w-full h-full rounded-full overflow-hidden p-2 bg-[#030712] border border-white/10 shadow-2xl relative z-10">
-              <img
-                src="./image/ancy.jpeg" 
-                alt="Ancy K"
-                className="w-full h-full rounded-full object-cover transition duration-700 ease-out transform group-hover:scale-105"
-              />
+            {/* Mock Code Header */}
+            <div className="flex items-center gap-2 mb-6 border-b border-white/5 pb-4">
+              <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
+              <span className="text-xs text-gray-500 font-mono ml-2">ancy.json</span>
             </div>
 
-            {/* Floating Dots */}
-            <div className="absolute w-2 h-2 bg-purple-400 rounded-full top-6 right-6 animate-pulse shadow-[0_0_10px_#c084fc]"></div>
-            <div className="absolute w-2 h-2 bg-cyan-400 rounded-full bottom-10 left-6 animate-ping shadow-[0_0_10px_#22d3ee]"></div>
+            {/* Mock Code Block */}
+            <div className="font-mono text-sm space-y-3 text-left">
+              <p className="text-purple-400">const <span className="text-cyan-400">developer</span> = &#123;</p>
+              <p className="pl-4 text-gray-400">name: <span className="text-yellow-200">"Ancy K"</span>,</p>
+              <p className="pl-4 text-gray-400">role: <span className="text-yellow-200">"UI / Software Eng."</span>,</p>
+              <p className="pl-4 text-gray-400">status: <span className="text-green-400">"Always Coding"</span>,</p>
+              <p className="pl-4 text-gray-400">passion: <span className="text-cyan-400">["Clean_UI", "Speed"]</span></p>
+              <p className="text-purple-400">&#125;;</p>
+            </div>
 
+            {/* Decorative Cyber Grid Background Element */}
+            <div className="absolute bottom-[-20px] right-[-20px] w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-purple-600/20 rounded-full blur-xl opacity-50 group-hover:scale-125 transition duration-500"></div>
           </div>
         </div>
 
