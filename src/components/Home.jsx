@@ -90,7 +90,7 @@ function Home() {
 
               {/* 🧑 IMAGE */}
               <img
-                src="/ancy.jpeg"
+                src="./image/ancy.jpeg"
                 alt="profile"
                 className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition duration-500"
               />
