@@ -22,63 +22,70 @@ function Home() {
   }, []);
 
   return (
-    <div className="bg-[#0b1120] text-gray-200">
+    <div className="bg-[#020617] text-gray-200">
       <Navbar />
 
       {/* 🏠 HERO */}
       <section
         id="home"
-        className="w-full min-h-screen flex items-center justify-center px-6 md:px-20"
+        className="w-full min-h-screen flex items-center justify-center px-6 md:px-16 relative overflow-hidden"
       >
 
-        <div className="w-full max-w-7xl grid md:grid-cols-2 gap-16 items-center">
+        {/* 🌌 NAVY GRADIENT BACKGROUND */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#020617] via-[#0a192f] to-[#020617]"></div>
+
+        {/* ✨ SOFT GLOW BLOBS */}
+        <div className="absolute w-[350px] h-[350px] bg-blue-600/20 rounded-full blur-[120px] top-10 left-10 animate-pulse"></div>
+        <div className="absolute w-[300px] h-[300px] bg-cyan-400/20 rounded-full blur-[120px] bottom-10 right-10 animate-pulse"></div>
+
+        {/* 💎 CONTAINER */}
+        <div className="relative z-10 w-full max-w-7xl grid md:grid-cols-2 gap-16 items-center">
 
           {/* 🧠 LEFT */}
           <div>
 
             <h1 className="text-5xl md:text-7xl font-semibold leading-tight text-white">
               Hi, I'm{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-400">
+              <span className="bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
                 {displayText}
               </span>
-              <span className="ml-1 animate-pulse text-gray-400">|</span>
+              <span className="ml-1 animate-pulse text-cyan-300">|</span>
             </h1>
 
-            <h2 className="mt-4 text-lg md:text-xl text-gray-400 tracking-wide">
+            <h2 className="mt-4 text-lg md:text-xl text-cyan-200">
               Software Developer • UI Engineer
             </h2>
 
             <p className="mt-6 text-gray-400 text-lg leading-relaxed max-w-xl">
-              I specialize in building scalable web applications with a strong
-              emphasis on clean architecture, performance, and intuitive user
-              interfaces. Focused on delivering reliable and maintainable
-              solutions using modern technologies like React and Tailwind CSS.
+              I design and develop modern, scalable web applications with a strong
+              focus on clean UI, performance, and user experience. Passionate about
+              building elegant solutions using React and Tailwind CSS.
             </p>
 
             {/* 📊 STATS */}
-            <div className="mt-10 flex gap-12">
+            <div className="mt-10 flex gap-10">
               <div>
-                <h3 className="text-2xl font-semibold text-white">10+</h3>
-                <p className="text-gray-500 text-sm">Projects Delivered</p>
+                <h3 className="text-2xl font-semibold text-cyan-300">10+</h3>
+                <p className="text-gray-500 text-sm">Projects</p>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-white">1+</h3>
-                <p className="text-gray-500 text-sm">Years Experience</p>
+                <h3 className="text-2xl font-semibold text-blue-300">1+</h3>
+                <p className="text-gray-500 text-sm">Years Learning</p>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold text-white">100%</h3>
-                <p className="text-gray-500 text-sm">Commitment</p>
+                <h3 className="text-2xl font-semibold text-cyan-400">100%</h3>
+                <p className="text-gray-500 text-sm">Passion</p>
               </div>
             </div>
 
             {/* 🚀 BUTTONS */}
             <div className="mt-10 flex gap-5">
 
-              <button className="px-7 py-3 bg-white text-black rounded-md font-medium hover:bg-gray-200 transition">
+              <button className="px-7 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg text-white font-medium shadow-lg hover:scale-105 transition">
                 Hire Me
               </button>
 
-              <button className="px-7 py-3 border border-gray-600 text-gray-300 rounded-md hover:bg-gray-800 transition">
+              <button className="px-7 py-3 border border-cyan-400 text-cyan-300 rounded-lg hover:bg-cyan-400 hover:text-black transition">
                 Download CV
               </button>
 
@@ -88,16 +95,23 @@ function Home() {
 
           {/* 🖼 RIGHT */}
           <div className="flex justify-center">
-            <div className="relative">
+            <div className="relative group">
 
-              {/* subtle ring */}
-              <div className="absolute inset-0 rounded-full border border-gray-700"></div>
+              {/* 🔵 ROTATING RING (FIXED) */}
+              <div className="absolute inset-0 rounded-full border-2 border-cyan-400 animate-[spin_14s_linear_infinite]"></div>
 
-              {/* image */}
+              {/* ✨ GLOW */}
+              <div className="absolute inset-0 rounded-full bg-cyan-400 blur-2xl opacity-20 group-hover:opacity-40 transition"></div>
+
+              {/* 🌟 PARTICLES */}
+              <div className="absolute w-3 h-3 bg-cyan-300 rounded-full top-2 left-10 animate-bounce"></div>
+              <div className="absolute w-2 h-2 bg-blue-400 rounded-full bottom-10 right-4 animate-ping"></div>
+
+              {/* 🧑 IMAGE */}
               <img
                 src="./image/ancy.jpeg"
                 alt="profile"
-                className="w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border border-gray-700 shadow-xl"
+                className="relative w-72 h-72 md:w-96 md:h-96 rounded-full object-cover border border-gray-700 shadow-2xl transform group-hover:scale-105 transition duration-500"
               />
 
             </div>
@@ -106,7 +120,7 @@ function Home() {
         </div>
       </section>
 
-      {/* 📄 OTHER SECTIONS */}
+      {/* OTHER SECTIONS */}
       <section id="about" className="scroll-mt-24">
         <About />
       </section>
