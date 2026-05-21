@@ -7,7 +7,7 @@ import Contact from "./Contact";
 
 function Home() {
 
-  const text = "Ancy K";
+  const text = "Ancy k!";
   const [displayText, setDisplayText] = useState("");
 
   useEffect(() => {
