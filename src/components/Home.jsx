@@ -21,20 +21,24 @@ function Home() {
   }, []);
 
   return (
-    <div className="bg-[#090d16] text-gray-300 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+    <div className="bg-[#030712] text-gray-300 font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
       <Navbar />
 
       {/* 🏠 HERO SECTION */}
       <section
         id="home"
-        className="w-full min-h-screen flex items-center justify-center px-6 md:px-16 relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#0f172a] via-[#090d16] to-[#020617]"
+        className="w-full min-h-screen flex items-center justify-center px-6 md:px-16 relative overflow-hidden bg-[#030712]"
       >
-        {/* 🕸️ CLASSY GRID OVERLAY */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        {/* 🌌 DYNAMIC GRADIENT BASE */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1e1b4b,#030712_70%)]"></div>
 
-        {/* ✨ AMBIENT GLOW CORES */}
-        <div className="absolute w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[140px] -top-20 -left-20 pointer-events-none"></div>
-        <div className="absolute w-[400px] h-[400px] bg-cyan-500/10 rounded-full blur-[140px] bottom-20 -right-10 pointer-events-none"></div>
+        {/* ☄️ ANIMATED FLOATING GLOW BLOBS (Moving Background) */}
+        <div className="absolute w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] top-[-10%] left-[-10%] animate-[bounce_15s_infinite_alternate] mix-blend-screen pointer-events-none"></div>
+        <div className="absolute w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[150px] bottom-[-20%] right-[-10%] animate-[pulse_10s_infinite_alternate] mix-blend-screen pointer-events-none"></div>
+        <div className="absolute w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-[130px] top-[40%] left-[50%] animate-[spin_25s_linear_infinite] mix-blend-screen pointer-events-none"></div>
+
+        {/* 🕸️ PREMIUM MESH/GRID OVERLAY */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293715_1px,transparent_1px),linear-gradient(to_bottom,#1f293715_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_40%,#000_60%,transparent_100%)]"></div>
 
         {/* 💎 MAIN CONTAINER */}
         <div className="relative z-10 w-full max-w-7xl grid md:grid-cols-2 gap-12 lg:gap-20 items-center py-20 md:py-0">
@@ -42,83 +46,84 @@ function Home() {
           {/* 🧠 LEFT COLUMN: CONTENT */}
           <div className="flex flex-col justify-center space-y-8 text-center md:text-left order-2 md:order-1">
             <div className="space-y-4">
-              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 tracking-wider uppercase backdrop-blur-sm animate-fade-in">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-cyan-500/10 to-purple-500/10 text-cyan-400 border border-cyan-500/20 tracking-wider uppercase backdrop-blur-md shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
                 Available for Opportunity
               </span>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-none">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-none">
                 Hi, I'm{" "}
-                <span className="bg-gradient-to-r from-white via-cyan-200 to-cyan-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent drop-shadow-sm">
                   {displayText}
                 </span>
-                <span className="ml-1 text-cyan-400 animate-[pulse_1s_infinite]">|</span>
+                <span className="ml-1 text-cyan-400 animate-[pulse_0.8s_infinite]">|</span>
               </h1>
 
-              <h2 className="text-xl md:text-2xl font-medium tracking-wide text-gray-400">
-                Software Developer <span className="text-cyan-500/60">•</span> UI Engineer
+              <h2 className="text-xl md:text-2xl font-semibold tracking-wide bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
+                Software Developer <span className="text-purple-500">•</span> UI Engineer
               </h2>
             </div>
 
-            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 font-light">
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto md:mx-0 font-normal opacity-90">
               I design and develop modern, scalable web applications with a strong
               focus on clean UI, performance, and user experience. Passionate about
               building elegant solutions using React and Tailwind CSS.
             </p>
 
-            {/* 📊 STATS (GLASSMORPHISM) */}
-            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto md:mx-0 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.05] backdrop-blur-md shadow-2xl">
+            {/* 📊 STATS (HIGH GLOSS GLASSMORPHISM) */}
+            <div className="grid grid-cols-3 gap-4 max-w-md mx-auto md:mx-0 p-4 rounded-2xl bg-white/[0.03] border border-white/[0.08] backdrop-blur-xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]">
               <div className="text-center p-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">10+</h3>
-                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1">Projects</p>
+                <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent tracking-tight">10+</h3>
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-1">Projects</p>
               </div>
-              <div className="text-center p-2 border-x border-white/[0.05]">
-                <h3 className="text-2xl md:text-3xl font-bold text-cyan-400 tracking-tight">1+</h3>
-                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1">Yr Learning</p>
+              <div className="text-center p-2 border-x border-white/[0.08]">
+                <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent tracking-tight">1+</h3>
+                <p className="text-cyan-500/70 text-xs font-bold uppercase tracking-wider mt-1">Yr Learning</p>
               </div>
               <div className="text-center p-2">
-                <h3 className="text-2xl md:text-3xl font-bold text-white tracking-tight">100%</h3>
-                <p className="text-gray-500 text-xs uppercase tracking-wider mt-1">Passion</p>
+                <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent tracking-tight">100%</h3>
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mt-1">Passion</p>
               </div>
             </div>
 
             {/* 🚀 BUTTONS */}
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-              <button className="relative group overflow-hidden px-8 py-3.5 bg-white text-black font-semibold rounded-xl transition-all duration-300 hover:bg-cyan-400 hover:text-black shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_35px_rgba(6,182,212,0.4)] tracking-wide">
-                Hire Me
+              <button className="relative group overflow-hidden px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-[0_0_30px_rgba(6,182,212,0.3)] hover:shadow-[0_0_40px_rgba(168,85,247,0.5)] tracking-wide">
+                <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out"></span>
+                <span className="relative z-10">Hire Me</span>
               </button>
 
-              <button className="px-8 py-3.5 border border-white/10 text-white font-medium rounded-xl hover:bg-white/[0.04] hover:border-cyan-400/50 transition duration-300 backdrop-blur-sm tracking-wide">
+              <button className="px-8 py-4 border border-white/10 text-white font-semibold rounded-xl hover:bg-white/[0.05] hover:border-cyan-400/50 transition duration-300 backdrop-blur-md tracking-wide shadow-md">
                 Download CV
               </button>
             </div>
           </div>
 
-          {/* 🖼 RIGHT COLUMN: PREMIUM PROFILE IMAGE */}
+          {/* 🖼 RIGHT COLUMN: NEON PROFILE IMAGE */}
           <div className="flex justify-center order-1 md:order-2">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 group">
               
-              {/* Outer Elegant Ring */}
-              <div className="absolute inset-[-10px] rounded-full border border-dashed border-cyan-500/30 animate-[spin_40s_linear_infinite] group-hover:border-cyan-400/50 transition duration-700"></div>
+              {/* Outer Cyan & Purple Neon Rotating Ring */}
+              <div className="absolute inset-[-8px] rounded-full bg-gradient-to-r from-cyan-400 to-purple-500 opacity-40 blur-sm animate-[spin_20s_linear_infinite] group-hover:opacity-80 transition duration-700"></div>
               
-              {/* Inner Solid Tech Ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-white/5 group-hover:border-cyan-400/30 transition duration-500"></div>
+              {/* Inner Dashed Border */}
+              <div className="absolute inset-[-15px] rounded-full border-2 border-dashed border-white/10 animate-[spin_50s_linear_infinite_reverse]"></div>
 
-              {/* Back Light Glow */}
-              <div className="absolute inset-4 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 blur-3xl opacity-10 group-hover:opacity-30 transition duration-700"></div>
+              {/* Behind-Image Glow overlay */}
+              <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-cyan-500 via-purple-500 to-indigo-500 blur-2xl opacity-20 group-hover:opacity-40 transition duration-700"></div>
 
               {/* Main Image Wrapper */}
-              <div className="w-full h-full rounded-full overflow-hidden p-3 bg-[#090d16] border border-white/10 shadow-2xl relative z-10">
+              <div className="w-full h-full rounded-full overflow-hidden p-2.5 bg-[#030712] border border-white/10 shadow-2xl relative z-10">
                 <img
                   src="./image/ancy.jpeg"
                   alt="Ancy K"
-                  className="w-full h-full rounded-full object-cover grayscale-[20%] group-hover:grayscale-0 transition duration-700 ease-out transform group-hover:scale-105"
+                  className="w-full h-full rounded-full object-cover transition duration-700 ease-out transform group-hover:scale-105"
                 />
               </div>
 
-              {/* Minimalist Floating Elements */}
-              <div className="absolute w-2 h-2 bg-cyan-400 rounded-full top-6 left-6 animate-pulse shadow-[0_0_10px_#22d3ee]"></div>
-              <div className="absolute w-1.5 h-1.5 bg-blue-400 rounded-full bottom-12 right-6 animate-ping"></div>
+              {/* Sparkles / Floating Dots */}
+              <div className="absolute w-2.5 h-2.5 bg-cyan-400 rounded-full top-8 left-8 animate-[ping_2s_infinite] shadow-[0_0_15px_#22d3ee]"></div>
+              <div className="absolute w-2 h-2 bg-purple-400 rounded-full bottom-14 right-8 animate-[pulse_1.5s_infinite] shadow-[0_0_15px_#c084fc]"></div>
             </div>
           </div>
 
@@ -130,7 +135,7 @@ function Home() {
         <About />
       </section>
 
-      <section id="education" className="scroll-mt-24 font-sans">
+      <section id="education" className="scroll-mt-24">
         <Education />
       </section>
 
